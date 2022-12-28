@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table border="1px solid black">
+    <h1>Lista de Familiares de Katya Gonzalez.</h1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Esta Vivo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for familiar in Familia %}
+        <tr>
+        
+        <td>{{familiar.nombre}}</td>
+        <td>{{familiar.apellido}}</td>
+        <td>{{familiar.edad}}</td>
+        {% if familiar.esta_vivo == True %}
+        <td>Vivo</td>
+        {% else %}
+        <td>Muerto</td>
+        {% endif %}
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
